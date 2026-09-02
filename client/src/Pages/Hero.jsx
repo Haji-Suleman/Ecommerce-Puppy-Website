@@ -1,15 +1,11 @@
 import Navbar from "../Components/Navbar";
 import "./Hero.css";
 import five_star_rating from "../assets/5 Star Rating.svg"
-
-/**
- * Drop your own SVG files into /public/icons (or /src/assets) and point
- * these paths at them. Everything below just renders <img src="..." />,
- * so swapping an asset is a one-line change.
- */
+import Checkmark from "../assets/Checkmark.svg"
+import Video from "C://Users//Haji Suleman//Videos//Screen Recordings//Screen Recording 2026-05-19 094338.mp4"
 const ICON = {
     star: "/icons/star.svg",
-    check: "/icons/check.svg",
+    check: "../assets/Checkmark.svg",
     arrow: "/icons/arrow.svg",
 };
 
@@ -32,7 +28,7 @@ export default function Hero({
     reviewCount = "37,000+",
     headline = "The Only Pee Pad That Requires No Training And Lasts Over A Year",
     ctaLabel = "Choose Bundle",
-    heroImage = "https://cdn.shopify.com/videos/c/o/v/c82df8c52e464ae3850ae2f882a65362.mp4",
+    Video = "https://cdn.shopify.com/videos/c/o/v/c82df8c52e464ae3850ae2f882a65362.mp4",
     heroImageAlt = "Dog standing at a raised feeding stand on a PuppyPad",
 }) {
     return (
@@ -59,7 +55,7 @@ export default function Hero({
                         {CHECKLIST.map((item, i) => (
                             <li key={i}>
                                 <span className="pp-hero__check">
-                                    <img src={ICON.check} alt="" />
+                                    <img src={Checkmark} alt="" />
                                 </span>
                                 <span>
                                     {item.bold && <strong>{item.bold}</strong>}
@@ -77,15 +73,21 @@ export default function Hero({
                     </a>
 
                     <div className="pp-hero__guarantee">
-                        <img src={ICON.check} alt="" />
+                        <img src={Checkmark} alt="" />
                         <span>90 DAY RISK FREE GUARANTEE</span>
                     </div>
                 </div>
 
                 <div className="pp-hero__media">
-                    <video src="https://cdn.shopify.com/videos/c/o/v/c82df8c52e464ae3850ae2f882a65362.mp4" alt={heroImageAlt} ></video>
+                    <video
+                        src={Video}
+                        autoPlay
+                        muted
+                        loop
+                        preload="auto"
+                    />
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }
