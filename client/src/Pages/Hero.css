@@ -1,0 +1,220 @@
+.pp-hero-page {
+    --pp-navy: #1c2f52;
+    --pp-green: #2f7d4f;
+    --pp-green-dark: #276a42;
+    --pp-mint: #eaf6f1;
+    --pp-gold: #f5b120;
+    background: var(--pp-mint);
+    min-height: 100vh;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color: var(--pp-navy);
+}
+
+.pp-hero-page__nav {
+    padding: 18px 20px 0;
+}
+
+.pp-hero {
+    display: flex;
+    align-items: stretch;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: calc(100vh - 90px);
+}
+
+.pp-hero__content {
+    flex: 1 1 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 56px;
+    order: 1;
+}
+
+.pp-hero__media {
+    flex: 1 1 54%;
+    position: relative;
+    order: 2;
+    min-height: 420px;
+}
+
+.pp-hero__media video {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- rating row --- */
+.pp-hero__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pp-hero__stars {
+    display: flex;
+}
+
+.pp-hero__stars img {
+    width: 100px;
+    height: 50px;
+    display: block;
+}
+
+.pp-hero__rating-text {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--pp-navy);
+}
+
+/* --- headline --- */
+.pp-hero__headline {
+    font-family: AwesomeSerif, serif;
+    font-weight: 200;
+    font-size: clamp(20px, 3.4vw, 40px);
+    line-height: 1.1;
+    color: var(--pp-navy);
+    margin: 0 0 28px;
+    max-width: 640px;
+}
+
+/* --- checklist --- */
+.pp-hero__list {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 520px;
+}
+
+.pp-hero__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--pp-navy);
+}
+
+.pp-hero__list li strong {
+    font-weight: 800;
+}
+
+.pp-hero__check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+}
+
+.pp-hero__check img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* --- CTA --- */
+.pp-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    max-width: 320px;
+    background: var(--pp-green);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 18px 18px 18px 28px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.pp-hero__cta:hover {
+    background: var(--pp-green-dark);
+}
+
+.pp-hero__cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--pp-green);
+    flex-shrink: 0;
+}
+
+.pp-hero__cta-icon img {
+    width: 17px;
+    height: 17px;
+    display: block;
+}
+
+.pp-hero__guarantee {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--pp-navy);
+}
+
+.pp-hero__guarantee img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* --- responsive: image first as the screen gets shorter/narrower --- */
+@media (max-width: 980px) {
+    .pp-hero {
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .pp-hero__media {
+        order: 1;
+        min-height: 320px;
+    }
+
+    .pp-hero__media img {
+        min-height: 320px;
+    }
+
+    .pp-hero__content {
+        order: 2;
+        padding: 40px 24px 56px;
+        align-items: flex-start;
+    }
+
+    .pp-hero__headline,
+    .pp-hero__list,
+    .pp-hero__cta {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp-hero__content {
+        padding: 32px 18px 44px;
+    }
+
+    .pp-hero__cta {
+        max-width: 100%;
+    }
+}
