@@ -1,14 +1,9 @@
 import Navbar from "../Components/Navbar";
 import "./Hero.css";
-import five_star_rating from "../assets/5 Star Rating.svg"
-import Checkmark from "../assets/Checkmark.svg"
-import Arrow from "../assets/arrow.svg"
-import Video from "C://Users//Haji Suleman//Videos//Screen Recordings//Screen Recording 2026-05-19 094338.mp4"
-const ICON = {
-    star: "/icons/star.svg",
-    check: "../assets/Checkmark.svg",
-    arrow: "/icons/arrow.svg",
-};
+import five_star_rating from "../assets/003_StarRating.svg"
+import Checkmark from "../assets/004_navyblue-checkmark.svg"
+import Arrow from "../assets/002_green-right-arrow.svg"
+
 
 const CHECKLIST = [
     {

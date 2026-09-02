@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Navbar.css";
 
-import doglogo from "../assets/PuppyPad Logo.svg"
-import arrow from "../assets/arrow.svg"
+import doglogo from "../assets/001_navyblue-logo.svg"
+import arrow from "../assets/002_green-right-arrow.svg"
 const NAV_LINKS = [
     { label: "How It Works", href: "#how-it-works" },
     { label: "Guarantee", href: "#guarantee" },

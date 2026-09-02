@@ -1,34 +1,16 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import ChevronRight from "../assets/Next Gift.svg"
-import ChevronLeft from "../assets/Previous Gift.svg"
-import Check from "../assets/Checkmark.svg"
-import CheckCircle2 from "../assets/Checkmark-1.svg"
-import Lock from "../assets/Warning.svg"
-import ShieldCheck from "../assets/Warning.svg"
-import WashingMachine from "../assets/Warning.svg"
-import Leaf from "../assets/Warning.svg"
-import Sparkles from "../assets/Warning.svg"
-import X from "../assets/Warning.svg"
-import Plus from "../assets/Warning.svg"
-import Minus from "../assets/Warning.svg"
-import ShoppingCart from "../assets/Warning.svg"
-import PawPrint from "../assets/Warning.svg"
+import ChevronRight from "../assets/005_navyblue-right-arrow.svg";
+import ChevronLeft from "../assets/004_navyblue-left-arrow.svg";
+import Check from "../assets/004_navyblue-checkmark.svg";
+import CheckCircle2 from "../assets/004_navyblue-checkmark.svg";
+import Sparkles from "../assets/021_diamond-star.svg";
+import X from "../assets/021_diamond-star.svg";
+import Plus from "../assets/021_diamond-star.svg";
+import Minus from "../assets/021_diamond-star.svg";
+import ShoppingCart from "../assets/021_diamond-star.svg";
+import PawPrint from "../assets/021_diamond-star.svg";
 import './Introduction.css';
 
-/**
- * NOTE ON ICONS
- * Your bundler resolves `import X from "../assets/whatever.svg"` to a URL
- * string (the asset path / data URL), not a React component. That's why
- * `<PawPrint />` crashed — React tried to create an HTML tag literally named
- * after that string. Every icon below is rendered as `<img src={Icon} .../>`
- * instead, which works with plain asset imports.
- *
- * If you'd rather use them as components (so you can recolor them with
- * currentColor, animate them, etc.), switch to SVGR: rename the imports to
- * `import { ReactComponent as PawPrint } from "../assets/Warning.svg"` with
- * CRA, or use `vite-plugin-svgr` and import from "../assets/Warning.svg?react"
- * with Vite. Then you can go back to `<PawPrint />`.
- */
 
 const GALLERY_IMAGES = [
     { id: 'g1', src: null, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use' },
@@ -57,32 +39,6 @@ const CHECKLIST = [
     'Saves You Money & The Planet',
 ];
 
-const FEATURE_CARDS = [
-    {
-        icon: Lock,
-        tone: 'tone-clay',
-        title: '100% Leak-Proof',
-        desc: 'Leak-proof with an anti-slip bottom to protect your furry friend.',
-    },
-    {
-        icon: ShieldCheck,
-        tone: 'tone-navy',
-        title: 'Rip-Proof',
-        desc: 'Your dog will never be able to rip these — guaranteed.',
-    },
-    {
-        icon: WashingMachine,
-        tone: 'tone-mint',
-        title: 'Machine Washable',
-        desc: 'Extra durable materials making it easy to launder.',
-    },
-    {
-        icon: Leaf,
-        tone: 'tone-sun',
-        title: 'Eco-Friendly',
-        desc: 'You and your pet doing your part together for the environment.',
-    },
-];
 
 const FAQ_PILLS = [
     {
@@ -254,24 +210,11 @@ export default function Introduction() {
                         ))}
                     </div>
 
-                    <div className="pp-feature-cards">
-                        {FEATURE_CARDS.map(({ icon, tone, title, desc }) => (
-                            <div className="pp-feature-card" key={title}>
-                                <div className={`pp-feature-icon ${tone}`}>
-                                    <img src={icon} alt="" className="pp-icon" />
-                                </div>
-                                <div>
-                                    <h4>{title}</h4>
-                                    <p>{desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
                 {/* ---------------- info column ---------------- */}
                 <div className="pp-info">
-                    <div className="pp-pills" role="tablist" aria-label="Frequently asked questions">
+                    <marquee className="pp-pills" role="tablist" aria-label="Frequently asked questions">
                         {FAQ_PILLS.map((pill) => (
                             <button
                                 key={pill.id}
@@ -285,7 +228,7 @@ export default function Introduction() {
                                 {pill.label}
                             </button>
                         ))}
-                    </div>
+                    </marquee>
 
                     {openFaq && (
                         <div className="pp-pill-answer" role="tabpanel">

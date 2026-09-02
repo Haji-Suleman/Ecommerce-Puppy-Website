@@ -253,79 +253,7 @@
     outline-offset: 2px;
 }
 
-.pp-feature-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 24px;
-}
 
-@media (max-width: 520px) {
-    .pp-feature-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-.pp-feature-card {
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    padding: 18px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-}
-
-.pp-feature-icon {
-    flex: none;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pp-feature-icon svg {
-    width: 22px;
-    height: 22px;
-}
-
-.pp-feature-icon.tone-clay {
-    background: #fbe3d0;
-    color: #b9612a;
-}
-
-.pp-feature-icon.tone-navy {
-    background: #dbe6f2;
-    color: var(--navy);
-}
-
-.pp-feature-icon.tone-mint {
-    background: #dcf0e2;
-    color: var(--mint);
-}
-
-.pp-feature-icon.tone-sun {
-    background: #fbf0c8;
-    color: #9a7d15;
-}
-
-.pp-feature-card h4 {
-    margin: 0 0 4px;
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.pp-feature-card p {
-    margin: 0;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-}
-
-/* ---------- info column ---------- */
 
 .pp-info {
     min-width: 0;
@@ -337,6 +265,7 @@
     overflow-x: auto;
     padding-bottom: 6px;
     scrollbar-width: none;
+    justify-content: space-between;
     margin-bottom: 22px;
 }
 
@@ -348,16 +277,17 @@
     flex: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
     padding: 11px 18px;
     border-radius: 999px;
     border: 1px solid transparent;
     background: var(--clay-soft);
     color: var(--navy-deep);
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     white-space: nowrap;
     transition: background 0.15s ease, border-color 0.15s ease;
+    margin-right: 40px;
 }
 
 .pp-pill svg {
@@ -835,4 +765,62 @@
 .pp-guide-row-highlight td {
     font-weight: 700;
     color: var(--navy-deep);
+}
+
+/* ---------- icon <img> sizing (for asset-URL svg imports) ----------
+   These icons are rendered as <img src={...} /> because the bundler
+   resolves `import X from "./file.svg"` to a URL string, not a component.
+   Kept separate from the earlier inline-svg rules above so both work. */
+
+.pp-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: inline-block;
+    flex: none;
+}
+
+.pp-icon-sm {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    display: inline-block;
+    flex: none;
+}
+
+.pp-icon-lg {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    opacity: 0.55;
+}
+
+.pp-nav-btn .pp-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.pp-feature-icon .pp-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.pp-check-item .pp-icon {
+    width: 21px;
+    height: 21px;
+}
+
+.pp-pill .pp-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.pp-add-btn .pp-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.pp-toast .pp-icon {
+    width: 16px;
+    height: 16px;
 }
