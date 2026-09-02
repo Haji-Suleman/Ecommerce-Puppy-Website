@@ -2,6 +2,7 @@ import Navbar from "../Components/Navbar";
 import "./Hero.css";
 import five_star_rating from "../assets/5 Star Rating.svg"
 import Checkmark from "../assets/Checkmark.svg"
+import Arrow from "../assets/arrow.svg"
 import Video from "C://Users//Haji Suleman//Videos//Screen Recordings//Screen Recording 2026-05-19 094338.mp4"
 const ICON = {
     star: "/icons/star.svg",
@@ -68,7 +69,7 @@ export default function Hero({
                     <a className="pp-hero__cta" href="#bundles">
                         <span>{ctaLabel}</span>
                         <span className="pp-hero__cta-icon">
-                            <img src={ICON.arrow} alt="" />
+                            <img src={Arrow} alt="" />
                         </span>
                     </a>
 
