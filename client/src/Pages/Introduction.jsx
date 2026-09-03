@@ -10,15 +10,19 @@ import Minus from "../assets/021_diamond-star.svg";
 import ShoppingCart from "../assets/021_diamond-star.svg";
 import PawPrint from "../assets/021_diamond-star.svg";
 import './Introduction.css';
-
-
+import PuppypaddHero from "../assets/006_Product-IMG-1-Gray.jpeg"
+import secondImageGallery from "../assets/007_Product-IMG-1-General.jpeg"
+import thirdImageGallery from "../assets/008_Product-IMG-2-Gray.jpeg"
+import fourthImageGallery from "../assets/009_Product-IMG-3-Gray.jpeg"
+import fifthImageGallery from "../assets/010_Product-IMG-2-General.jpeg"
+import sixthImageGallery from "../assets/011_Product-IMG-2-Gray.jpeg"
 const GALLERY_IMAGES = [
-    { id: 'g1', src: null, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use' },
-    { id: 'g2', src: null, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo' },
-    { id: 'g3', src: null, alt: 'Dog standing on PuppyPad indoors', label: 'Photo 3 — lifestyle shot' },
-    { id: 'g4', src: null, alt: 'Puppy resting on the patterned pad', label: 'Photo 4 — pattern detail' },
-    { id: 'g5', src: null, alt: 'Five-star customer review graphic', label: 'Photo 5 — customer review' },
-    { id: 'g6', src: null, alt: 'Dog lying on the pad on a bed', label: 'Photo 6 — hero shot' },
+    { id: 'g1', src: PuppypaddHero, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use' },
+    { id: 'g2', src: secondImageGallery, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo' },
+    { id: 'g3', src: thirdImageGallery, alt: 'Dog standing on PuppyPad indoors', label: 'Photo 3 — lifestyle shot' },
+    { id: 'g4', src: fourthImageGallery, alt: 'Puppy resting on the patterned pad', label: 'Photo 4 — pattern detail' },
+    { id: 'g5', src: fifthImageGallery, alt: 'Five-star customer review graphic', label: 'Photo 5 — customer review' },
+    { id: 'g6', src: sixthImageGallery, alt: 'Dog lying on the pad on a bed', label: 'Photo 6 — hero shot' },
 ];
 
 const SIZES = [
