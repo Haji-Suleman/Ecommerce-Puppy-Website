@@ -11,18 +11,27 @@ import ShoppingCart from "../assets/021_diamond-star.svg";
 import PawPrint from "../assets/021_diamond-star.svg";
 import './Introduction.css';
 import PuppypaddHero from "../assets/006_Product-IMG-1-Gray.jpeg"
+import PuppypaddHeroWhite from "../assets/015_Product-IMG-4-Gray.jpeg"
 import secondImageGallery from "../assets/007_Product-IMG-1-General.jpeg"
 import thirdImageGallery from "../assets/008_Product-IMG-2-Gray.jpeg"
 import fourthImageGallery from "../assets/009_Product-IMG-3-Gray.jpeg"
 import fifthImageGallery from "../assets/010_Product-IMG-2-General.jpeg"
 import sixthImageGallery from "../assets/011_Product-IMG-2-Gray.jpeg"
+import sixthImageGalleryWhite from "../assets/020_Product-IMG-6-Gray.jpeg"
 const GALLERY_IMAGES = [
-    { id: 'g1', src: PuppypaddHero, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use' },
-    { id: 'g2', src: secondImageGallery, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo' },
-    { id: 'g3', src: thirdImageGallery, alt: 'Dog standing on PuppyPad indoors', label: 'Photo 3 — lifestyle shot' },
-    { id: 'g4', src: fourthImageGallery, alt: 'Puppy resting on the patterned pad', label: 'Photo 4 — pattern detail' },
-    { id: 'g5', src: fifthImageGallery, alt: 'Five-star customer review graphic', label: 'Photo 5 — customer review' },
-    { id: 'g6', src: sixthImageGallery, alt: 'Dog lying on the pad on a bed', label: 'Photo 6 — hero shot' },
+    { id: 'g1', src: PuppypaddHero, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use', type: "gray" },
+    { id: 'g2', src: secondImageGallery, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo', type: "gray" },
+    { id: 'g3', src: thirdImageGallery, alt: 'Dog standing on PuppyPad indoors', label: 'Photo 3 — lifestyle shot', type: "gray" },
+    { id: 'g4', src: fourthImageGallery, alt: 'Puppy resting on the patterned pad', label: 'Photo 4 — pattern detail', type: "gray" },
+    { id: 'g5', src: fifthImageGallery, alt: 'Five-star customer review graphic', label: 'Photo 5 — customer review', type: "gray" },
+    { id: 'g6', src: sixthImageGallery, alt: 'Dog lying on the pad on a bed', label: 'Photo 6 — hero shot', type: "gray" },
+    { id: 'g1', src: PuppypaddHeroWhite, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use', type: "white" },
+    { id: 'g2', src: secondImageGallery, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo', type: "white" },
+    { id: 'g3', src: thirdImageGallery, alt: 'Dog standing on PuppyPad indoors', label: 'Photo 3 — lifestyle shot', type: "white" },
+    { id: 'g4', src: fourthImageGallery, alt: 'Puppy resting on the patterned pad', label: 'Photo 4 — pattern detail', type: "white" },
+    { id: 'g5', src: fifthImageGallery, alt: 'Five-star customer review graphic', label: 'Photo 5 — customer review', type: "white" },
+    { id: 'g6', src: sixthImageGalleryWhite, alt: 'Dog lying on the pad on a bed', label: 'Photo 6 — hero shot', type: "white" },
+
 ];
 
 const SIZES = [
@@ -103,7 +112,7 @@ export default function Introduction() {
 
     // ---- selection state -------------------------------------------------
     const [selectedSize, setSelectedSize] = useState('small');
-    const [selectedColor, setSelectedColor] = useState('white');
+    const [selectedColor, setSelectedColor] = useState('gray');
     const [quantity, setQuantity] = useState(1);
     const [openFaq, setOpenFaq] = useState(null);
     const [showSizeGuide, setShowSizeGuide] = useState(false);
@@ -150,16 +159,10 @@ export default function Introduction() {
                             style={{ transform: `translateX(-${activeSlide * 100}%)` }}
                         >
                             {GALLERY_IMAGES.map((img) => (
-                                <div className="pp-stage-slide" key={img.id}>
-                                    {img.src ? (
+                                (selectedColor === img.type) ?
+                                    <div className="pp-stage-slide" key={img.id}>
                                         <img src={img.src} alt={img.alt} />
-                                    ) : (
-                                        <div className="pp-stage-placeholder">
-                                            <img src={PawPrint} alt="" className="pp-icon-lg" />
-                                            <span>{img.label}</span>
-                                        </div>
-                                    )}
-                                </div>
+                                    </div> : null
                             ))}
                         </div>
 
@@ -194,24 +197,20 @@ export default function Introduction() {
                     </div>
 
                     <div className="pp-thumbs">
-                        {GALLERY_IMAGES.map((img, i) => (
-                            <button
-                                key={img.id}
-                                type="button"
-                                className={`pp-thumb${i === activeSlide ? ' is-active' : ''}`}
-                                onClick={() => goToSlide(i)}
-                                aria-label={`Show ${img.label}`}
-                                aria-current={i === activeSlide}
-                            >
-                                {img.src ? (
+                        {GALLERY_IMAGES.map((img, i) =>
+                            img.src && selectedColor === img.type ? (
+                                <button
+                                    key={img.id}
+                                    type="button"
+                                    className={`pp-thumb${i === activeSlide ? ' is-active' : ''}`}
+                                    onClick={() => goToSlide(i)}
+                                    aria-label={`Show ${img.label}`}
+                                    aria-current={i === activeSlide}
+                                >
                                     <img src={img.src} alt="" />
-                                ) : (
-                                    <div className="pp-thumb-placeholder">
-                                        <img src={PawPrint} alt="" className="pp-icon" />
-                                    </div>
-                                )}
-                            </button>
-                        ))}
+                                </button >
+                            ) : null
+                        )}
                     </div>
 
                 </div>
@@ -366,46 +365,48 @@ export default function Introduction() {
             </div>
 
             {/* ---------------- size guide modal ---------------- */}
-            {showSizeGuide && (
-                <div
-                    className="pp-modal-overlay"
-                    onClick={(e) => e.target === e.currentTarget && setShowSizeGuide(false)}
-                >
-                    <div className="pp-modal" role="dialog" aria-modal="true" aria-labelledby="pp-guide-title">
-                        <button
-                            type="button"
-                            className="pp-modal-close"
-                            onClick={() => setShowSizeGuide(false)}
-                            aria-label="Close size guide"
-                        >
-                            <img src={X} alt="" className="pp-icon" />
-                        </button>
-                        <h3 id="pp-guide-title">Find your size</h3>
-                        <p>Measure your dog nose-to-tail, then match it to the guide below.</p>
-                        <table className="pp-guide-table">
-                            <thead>
-                                <tr>
-                                    <th>Size</th>
-                                    <th>Dimensions</th>
-                                    <th>Best for</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {SIZES.map((size) => (
-                                    <tr
-                                        key={size.id}
-                                        className={size.id === selectedSize ? 'pp-guide-row-highlight' : ''}
-                                    >
-                                        <td>{size.name}</td>
-                                        <td>{size.dims}</td>
-                                        <td>{size.fitsFor}</td>
+            {
+                showSizeGuide && (
+                    <div
+                        className="pp-modal-overlay"
+                        onClick={(e) => e.target === e.currentTarget && setShowSizeGuide(false)}
+                    >
+                        <div className="pp-modal" role="dialog" aria-modal="true" aria-labelledby="pp-guide-title">
+                            <button
+                                type="button"
+                                className="pp-modal-close"
+                                onClick={() => setShowSizeGuide(false)}
+                                aria-label="Close size guide"
+                            >
+                                <img src={X} alt="" className="pp-icon" />
+                            </button>
+                            <h3 id="pp-guide-title">Find your size</h3>
+                            <p>Measure your dog nose-to-tail, then match it to the guide below.</p>
+                            <table className="pp-guide-table">
+                                <thead>
+                                    <tr>
+                                        <th>Size</th>
+                                        <th>Dimensions</th>
+                                        <th>Best for</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {SIZES.map((size) => (
+                                        <tr
+                                            key={size.id}
+                                            className={size.id === selectedSize ? 'pp-guide-row-highlight' : ''}
+                                        >
+                                            <td>{size.name}</td>
+                                            <td>{size.dims}</td>
+                                            <td>{size.fitsFor}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )
+            }
+        </div >
     );
 }
