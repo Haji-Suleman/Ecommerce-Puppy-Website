@@ -297,6 +297,7 @@ export default function Introduction() {
                         </h3>
                     </div>
 
+
                     <div className="pp-color-row">
                         {COLORS.map((color) => {
                             const isSelected = color.id === selectedColor;
@@ -320,47 +321,6 @@ export default function Introduction() {
                             );
                         })}
                     </div>
-
-                    <hr className="pp-divider" />
-
-                    {/* quantity + add to cart */}
-                    <p className="pp-selection-summary">
-                        {activeSize?.name} · {activeSize?.dims} · {activeColor?.name}
-                    </p>
-
-                    <div className="pp-purchase-row">
-                        <div className="pp-qty">
-                            <button
-                                type="button"
-                                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                                disabled={quantity <= 1}
-                                aria-label="Decrease quantity"
-                            >
-                                <img src={Minus} alt="" className="pp-icon-sm" />
-                            </button>
-                            <span>{quantity}</span>
-                            <button
-                                type="button"
-                                onClick={() => setQuantity((q) => Math.min(9, q + 1))}
-                                disabled={quantity >= 9}
-                                aria-label="Increase quantity"
-                            >
-                                <img src={Plus} alt="" className="pp-icon-sm" />
-                            </button>
-                        </div>
-
-                        <button type="button" className="pp-add-btn" onClick={handleAddToCart}>
-                            <img src={ShoppingCart} alt="" className="pp-icon" />
-                            Add {quantity > 1 ? `${quantity} ` : ''}To Cart
-                        </button>
-                    </div>
-
-                    {justAdded && (
-                        <div className="pp-toast" role="status">
-                            <img src={CheckCircle2} alt="" className="pp-icon" />
-                            Added {quantity} × {activeSize?.name} / {activeColor?.name} PuppyPad to your cart.
-                        </div>
-                    )}
                 </div>
             </div>
 
