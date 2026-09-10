@@ -18,6 +18,7 @@ import fourthImageGallery from "../assets/009_Product-IMG-3-Gray.jpeg"
 import fifthImageGallery from "../assets/010_Product-IMG-2-General.jpeg"
 import sixthImageGallery from "../assets/011_Product-IMG-2-Gray.jpeg"
 import sixthImageGalleryWhite from "../assets/020_Product-IMG-6-Gray.jpeg"
+
 const GALLERY_IMAGES = [
     { id: 'g1', src: PuppypaddHero, alt: 'PuppyPad laid out on the floor', label: 'Photo 1 — pad in use', type: "gray" },
     { id: 'g2', src: secondImageGallery, alt: 'PuppyPad next to a water bowl', label: 'Photo 2 — leak-proof demo', type: "gray" },

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Cart.css";
-
+import offersPuppyPadGray1 from "../assets/022_Gray-1Pad.png"
+import offersPuppyPadGray2 from "../assets/024_Gray-3Pads.png"
+import offersPuppyPadGray3 from "../assets/023_Gray-6Pads.png"
 const OFFERS = [
     {
         id: 1,
@@ -9,7 +11,7 @@ const OFFERS = [
         strike: null,
         save: null,
         imgAlt: "1 PuppyPad",
-        imgSrc: "https://placehold.co/80x90/e7e2da/6b6b6b?text=Pad",
+        imgSrc: offersPuppyPadGray1,
     },
     {
         id: 2,
@@ -18,7 +20,7 @@ const OFFERS = [
         strike: "$180",
         save: "SAVE $90",
         imgAlt: "Buy 3 Get 3 Free",
-        imgSrc: "https://placehold.co/120x90/e7e2da/6b6b6b?text=Pads",
+        imgSrc: offersPuppyPadGray2,
     },
     {
         id: 3,
@@ -27,7 +29,7 @@ const OFFERS = [
         strike: "$90",
         save: "SAVE $30",
         imgAlt: "Buy 2 Get 1 Free",
-        imgSrc: "https://placehold.co/100x90/e7e2da/6b6b6b?text=Pads",
+        imgSrc: offersPuppyPadGray3,
     },
 ];
 
