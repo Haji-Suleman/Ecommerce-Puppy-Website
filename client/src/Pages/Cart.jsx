@@ -130,7 +130,7 @@ export default function Cart() {
                 <button
                     type="button"
                     className="cart-add-to-cart"
-                    onClick={alert("This page is not yet build")}
+                    onClick={()=>alert("This page is not yet build")}
                 >
                     <span>
                         ADD TO CART - {selectedOffer.now}
