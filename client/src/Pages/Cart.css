@@ -240,3 +240,36 @@
         gap: 10px;
     }
 }
+
+.cart-month-row.current>span:last-child {
+    display: inline-block;
+    animation: soldPulse 7s ease-in-out infinite;
+}
+
+@keyframes soldPulse {
+
+    0% {
+        color: black;
+    }
+
+    90% {
+        font-size: inherit;
+        transform: scale(1);
+    }
+
+    92% {
+        font-size: 18px;
+        transform: scale(1.05);
+    }
+
+    96% {
+        font-size: 18px;
+        transform: scale(1.05);
+    }
+
+    100% {
+        font-size: inherit;
+        transform: scale(1);
+        color: green;
+    }
+}
