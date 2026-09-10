@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Hero from './Pages/Hero'
 import Introduction from './Pages/Introduction'
 import Cart from './Pages/Cart'
@@ -9,6 +9,7 @@ function App() {
       <Hero />
       <Introduction />
       <Cart />
+      <SpeedInsights />
     </>
   )
 }
